@@ -20,14 +20,16 @@ char *ft_strstr (const char *src, const char *occ)
 {
   int index;
   int index2;
+  int trouver;
 
-
+  trouver = 0;
   index = 0;
   index2 = 0;
   while(src[index] != '\0')
     {
       if(src[index] == occ[0])
 	{
+	  trouver = index;
 	  while(src[index] == occ[index2])
 	    {
 	      index++;
@@ -35,8 +37,9 @@ char *ft_strstr (const char *src, const char *occ)
 	    }  
 	  if(occ[index2--] == '\0')
 	    {
-	      return((char *)occ);
+	      return ((char *)&src[trouver]);
 	    }
+	  trouver = 0;
 	  index2 = 0;
 	}
       index++;
