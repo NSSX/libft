@@ -1,3 +1,5 @@
+#include "libft.h"
+
 void	*ft_strcpy(char *src, char *dest)
 {
 	int index;

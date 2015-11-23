@@ -1,9 +1,4 @@
-#include <unistd.h>
-
-void ft_putchar(char c)
-{
-  write(1, &c, 1);
-}
+#include "libft.h"
 
 int ft_isalnum(int c)
 {
@@ -17,13 +12,6 @@ int ft_isalnum(int c)
   }
   else
     return (0);
-}
-
-int main()
-{
-  ft_putchar(ft_isalnum('4') + 48);
-  ft_putchar('\n');
-  return (0);
 }
 
 

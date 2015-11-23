@@ -1,22 +1,6 @@
-#include <unistd.h>
+#include "libft.h"
 
-void ft_putchar(char c)
-{
-  write(1, &c, 1);
-}
-void ft_putstr(char *str)
-{
-  int index;
-
-  index = 0;
-  while(str[index] != '\0')
-    {
-      ft_putchar(str[index]);
-      index++;
-    }
-}
-
-char *ft_strstr (const char *src, const char *occ)
+char	*ft_strstr (const char *src, const char *occ)
 {
   int index;
   int index2;
@@ -47,9 +31,3 @@ char *ft_strstr (const char *src, const char *occ)
   return(NULL);
 }
 
-int main()
-{
-  ft_putstr(ft_strstr("wqdqwsalutdwdwd", "salutd"));
-  ft_putchar('\n');
-  return (0);
-}
