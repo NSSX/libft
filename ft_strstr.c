@@ -1,37 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/11/24 15:55:29 by avella            #+#    #+#             */
+/*   Updated: 2015/11/24 16:01:05 by avella           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char    *ft_strstr(const char *s1, const char *s2)
+char	*ft_strstr(const char *s1, const char *s2)
 {
-  int index;
-  int index2;
-  int indextemp;
+	int i;
+	int i2;
+	int it;
 
-  indextemp = 0;
-  index2 = 0;
-  index = 0;
-  if(s2[0] == '\0')
-    return ((void *)&s1[0]);
-  while(s1[index] != '\0')
-    {
-      if(s1[index] == s2[0])
+	i2 = 0;
+	i = 0;
+	if (s2[0] == '\0')
+		return ((void *)&s1[0]);
+	while (s1[i] != '\0')
 	{
-	  indextemp = index;
-	  while((s1[indextemp] == s2[index2]) && s2[index2] != '\0' && s1[indextemp] != '\0')
-	    {
-	      index2++;
-	      indextemp++;
-	    }
-	  if(s2[index2] == '\0')
-	    {
-	      return ((void *)&s1[index]);
-	    }
-	  else
-	  {
-	    index2 = 0;
-	  }
+		if (s1[i] == s2[0])
+		{
+			it = i;
+			while ((s1[it] == s2[i2]) && s2[i2] != '\0' && s1[it] != '\0')
+			{
+				i2++;
+				it++;
+			}
+			if (s2[i2] == '\0')
+				return ((void *)&s1[i]);
+			i2 = 0;
+		}
+		i++;
 	}
-      index++;
-    }
-  return(NULL);
+	return (NULL);
 }
-

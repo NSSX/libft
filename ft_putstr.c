@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/11/24 16:23:09 by avella            #+#    #+#             */
+/*   Updated: 2015/11/24 16:23:19 by avella           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
-  int index;
+	int index;
 
-  index = 0;
-  while(str[index] != '\0')
-    {
-      ft_putchar(str[index]);
-      index++;
-    }
+	index = 0;
+	while (str[index] != '\0')
+	{
+		ft_putchar(str[index]);
+		index++;
+	}
 }
