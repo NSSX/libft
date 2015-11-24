@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 16:07:11 by avella            #+#    #+#             */
-/*   Updated: 2015/11/24 16:13:07 by avella           ###   ########.fr       */
+/*   Created: 2015/11/24 17:52:05 by avella            #+#    #+#             */
+/*   Updated: 2015/11/24 17:53:28 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	size_t i;
-	size_t i2;
-	size_t it;
+	size_t index;
 
-	i2 = 0;
-	i = 0;
-	if (s2[0] == '\0')
-		return ((void *)&s1[0]);
-	while (s1[i] != '\0' && i < n)
-	{
-		if (s1[i] == s2[0])
-		{
-			it = i;
-			while (s1[it] == s2[i2] && s1[it] != '\0' && it < n)
-			{
-				i2++;
-				it++;
-				if (s2[i2] == '\0')
-					return ((void *)&s1[i]);
-			}
-			i2 = 0;
-		}
-		i++;
-	}
-	return (NULL);
+	index = 0;
+	while (s1[index] != '\0' && s2[index] != '\0' &&
+			s1[index] == s2[index] && index < n)
+		index++;
+	if ((s1[index] == '\0' && s2[index] == '\0') || index == n)
+		return (1);
+	else
+		return (0);
 }

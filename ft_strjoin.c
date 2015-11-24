@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 16:07:11 by avella            #+#    #+#             */
-/*   Updated: 2015/11/24 16:13:07 by avella           ###   ########.fr       */
+/*   Created: 2015/11/24 18:37:49 by avella            #+#    #+#             */
+/*   Updated: 2015/11/24 18:41:07 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t i;
-	size_t i2;
-	size_t it;
+	char	*chaine;
+	int		index;
+	int		index2;
 
-	i2 = 0;
-	i = 0;
-	if (s2[0] == '\0')
-		return ((void *)&s1[0]);
-	while (s1[i] != '\0' && i < n)
+	index2 = 0;
+	index = 0;
+	chaine = ft_memalloc(ft_strlen(s1) + ft_strlen(s2));
+	if (chaine == NULL)
+		return (NULL);
+	while (s1[index2] != '\0')
 	{
-		if (s1[i] == s2[0])
-		{
-			it = i;
-			while (s1[it] == s2[i2] && s1[it] != '\0' && it < n)
-			{
-				i2++;
-				it++;
-				if (s2[i2] == '\0')
-					return ((void *)&s1[i]);
-			}
-			i2 = 0;
-		}
-		i++;
+		chaine[index] = s1[index2];
+		index++;
+		index2++;
 	}
-	return (NULL);
+	index2 = 0;
+	while (s2[index2] != '\0')
+	{
+		chaine[index] = s2[index2];
+		index++;
+		index2++;
+	}
+	chaine[index] = '\0';
+	return (chaine);
 }
