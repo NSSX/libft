@@ -2,7 +2,7 @@
 
 void    *ft_memset(void *b, int c, size_t len)
 {
-  int index;
+  size_t index;
 
   unsigned char *m;
   m = (unsigned char *)b;
@@ -12,5 +12,5 @@ void    *ft_memset(void *b, int c, size_t len)
       m[index] = (unsigned char)c;
       index++;
     }
-   return ((void *)m);
+   return (b);
 }
