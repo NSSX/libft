@@ -2,8 +2,9 @@
 #include <stdio.h>
 int main()
 {
-  char c[50] = "----tkkd";
-  char d[50] = "salutdwd";
-  printf("%s",ft_memchr(d,'l',10));
+  char c[50] = "--------";
+  char d[50] = "salutdwdspspsp";
+  
+  printf("%s",ft_strrchr(d,'x'));
   return (0);
 }
