@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 16:23:09 by avella            #+#    #+#             */
-/*   Updated: 2015/11/24 16:23:19 by avella           ###   ########.fr       */
+/*   Created: 2015/11/25 18:17:40 by avella            #+#    #+#             */
+/*   Updated: 2015/11/25 18:19:09 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *str)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	int index;
+	int		index;
+	char	*chaine;
 
 	index = 0;
-	while (str[index] != '\0')
+	if (s && f)
 	{
-		ft_putchar(str[index]);
-		index++;
+		chaine = malloc(sizeof(char) * ft_strlen(s) + 1);
+		while (s[index] != '\0')
+		{
+			chaine[index] = f((char)s[index]);
+			index++;
+		}
+		return (chaine);
 	}
 }
