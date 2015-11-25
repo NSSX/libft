@@ -6,7 +6,7 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 18:25:17 by avella            #+#    #+#             */
-/*   Updated: 2015/11/25 18:26:11 by avella           ###   ########.fr       */
+/*   Updated: 2015/11/25 19:50:08 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		}
 		return (chaine);
 	}
+	return (NULL);
 }

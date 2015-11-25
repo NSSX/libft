@@ -6,7 +6,7 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:26:53 by avella            #+#    #+#             */
-/*   Updated: 2015/11/24 15:46:45 by avella           ###   ########.fr       */
+/*   Updated: 2015/11/25 19:49:46 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strlen(const char *str)
 {
-  int	index;
+	int	index;
 
 	index = 0;
 	while (str[index] != '\0')
