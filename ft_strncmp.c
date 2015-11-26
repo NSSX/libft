@@ -24,5 +24,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	if (i >= n)
 		i--;
 	resultat = s1[i] - s2[i];
-	return (resultat);
+	return ((unsigned char)resultat);
 }
