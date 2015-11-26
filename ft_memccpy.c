@@ -6,7 +6,7 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:34:39 by avella            #+#    #+#             */
-/*   Updated: 2015/11/24 15:39:42 by avella           ###   ########.fr       */
+/*   Updated: 2015/11/26 11:47:09 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		d[i] = s[i];
 		if (s[i] == (unsigned char)c)
 		{
+			i++;
 			return ((void *)&dst[i]);
 		}
 		i++;
