@@ -6,7 +6,7 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:31:29 by avella            #+#    #+#             */
-/*   Updated: 2015/11/25 16:31:46 by avella           ###   ########.fr       */
+/*   Updated: 2015/11/26 15:02:41 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,24 @@
 
 void	ft_putnbr(int n)
 {
+	unsigned int nb;
+	unsigned int w;
+
 	if (n < 0)
 	{
-		ft_putchar('-');
-		n = -n;
+		nb = -n;
+		write(1, "-", 1);
 	}
-	if (n >= 10)
+	else
+		nb = n;
+	if (nb < 10)
 	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
+		w = nb + '0';
+		write(1, &w, 1);
 	}
 	else
 	{
-		ft_putchar(n + '0');
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
 	}
 }

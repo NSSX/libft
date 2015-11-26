@@ -56,8 +56,6 @@ char	**malloc_word(char **tab, char const *s, char c, int i)
 		else
 			i++;
 	}
-	tab[indext] = (char *)malloc(sizeof(char) * 2);
-	tab[indext][0] = '\0';
 	return (tab);
 }
 
@@ -86,7 +84,6 @@ char	**write_word(char **tab, char const *s, char c)
 		else
 			i++;
 	}
-	tab[indext][indext2] = '\0';
 	return (tab);
 }
 
