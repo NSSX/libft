@@ -22,6 +22,8 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+
+char 				*ft_sentence(char *chaine);
 int 					ft_iszed(char c);
 void				ft_putchar(char c);
 void				ft_putstr(char const *str);
