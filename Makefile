@@ -41,7 +41,7 @@ $(OBJ): ./libft.h $(SRC)
 	$(CC) $(FLAGS) -I . -c $(SRC)
 
 clean:
-	rm -f *.o
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

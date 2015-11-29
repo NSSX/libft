@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s1)
 	char		*dupli;
 
 	index = 0;
-	dupli = (char *)malloc(sizeof(char) * ft_strlen(s1));
+	dupli = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1);
 	if (dupli == NULL)
 	{
 		return (NULL);
@@ -28,5 +28,6 @@ char	*ft_strdup(const char *s1)
 		dupli[index] = s1[index];
 		index++;
 	}
+	dupli[index] = '\0';
 	return (dupli);
 }

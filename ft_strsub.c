@@ -18,15 +18,16 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	chaine = ft_memalloc(len);
+	chaine = ft_memalloc(len + 1);
 	if (chaine)
 	{
-		while (i < len)
+		while (i < len && s[start] != '\0')
 		{
 			chaine[i] = s[start];
 			start++;
 			i++;
 		}
+		chaine[i] = '\0';
 		return (chaine);
 	}
 	else

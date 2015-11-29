@@ -16,7 +16,7 @@ void	*ft_memalloc(size_t size)
 {
 	unsigned char *zone;
 
-	zone = malloc(sizeof(size) * size);
+	zone = (unsigned char *)malloc(sizeof(size) * size);
 	if (zone)
 	{
 		ft_bzero(zone, 0);

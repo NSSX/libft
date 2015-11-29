@@ -6,13 +6,13 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:21:20 by avella            #+#    #+#             */
-/*   Updated: 2015/11/26 15:30:27 by avella           ###   ########.fr       */
+/*   Updated: 2015/11/29 18:26:17 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_count(int n, int count)
+static int		ft_count(int n, int count)
 {
 	while (n)
 	{
@@ -22,7 +22,7 @@ int		ft_count(int n, int count)
 	return (count);
 }
 
-char	*mystr(char *chaine, int negativ, int count, int myn)
+static char		*mystr(char *chaine, int negativ, int count, int myn)
 {
 	if (negativ == 1)
 		chaine[0] = '-';
@@ -35,7 +35,7 @@ char	*mystr(char *chaine, int negativ, int count, int myn)
 	return (chaine);
 }
 
-char	*myreturn(int n)
+static char		*myreturn(int n)
 {
 	if (n == 0)
 		return ("0");
@@ -44,7 +44,7 @@ char	*myreturn(int n)
 	return (NULL);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char	*chaine;
 	int		count;

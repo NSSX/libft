@@ -6,7 +6,7 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:44:16 by avella            #+#    #+#             */
-/*   Updated: 2015/11/26 11:50:21 by avella           ###   ########.fr       */
+/*   Updated: 2015/11/29 18:23:48 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t			i;
-	int				resultat;
-	unsigned char	*src1;
-	unsigned char	*src2;
+	unsigned char *src1;
+	unsigned char *src2;
 
-	src1 = (unsigned char *)s1;
-	src2 = (unsigned char *)s2;
-	resultat = 0;
-	i = 0;
-	while (src1[i] == src2[i] && i < n && src1[i] != '\0' && src2[i] != '\0')
-		i++;
-	if (i >= n)
-		i--;
-	resultat = src1[i] - src2[i];
-	return (resultat);
+	src1 = (unsigned char*)s1;
+	src2 = (unsigned char*)s2;
+	if (s1 == s2)
+		return (0);
+	if (s1 == NULL || s2 == NULL)
+		return (0);
+	while (n--)
+	{
+		if (*src1 != *src2)
+			return (*src1 - *src2);
+		src1++;
+		src2++;
+	}
+	return (0);
 }

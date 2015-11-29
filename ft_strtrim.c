@@ -6,13 +6,13 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 10:55:15 by avella            #+#    #+#             */
-/*   Updated: 2015/11/25 11:02:44 by avella           ###   ########.fr       */
+/*   Updated: 2015/11/29 18:24:35 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_chainereturned(char *chaine, int i2, int i, char const *s)
+static char		*ft_chainereturned(char *chaine, int i2, int i, char const *s)
 {
 	int count;
 
@@ -26,7 +26,7 @@ char	*ft_chainereturned(char *chaine, int i2, int i, char const *s)
 	return (chaine);
 }
 
-char	*ft_strtrim(char const *s)
+char			*ft_strtrim(char const *s)
 {
 	char	*chaine;
 	int		i;
@@ -34,7 +34,7 @@ char	*ft_strtrim(char const *s)
 
 	i2 = 0;
 	i = 0;
-	chaine = malloc(sizeof(char) * ft_strlen(s));
+	chaine = (char *)malloc(sizeof(char) * ft_strlen(s));
 	if (chaine == NULL)
 		return (NULL);
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
