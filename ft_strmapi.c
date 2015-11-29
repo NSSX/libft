@@ -21,6 +21,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (s && f)
 	{
 		chaine = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+		if(!chaine)
+		   return (NULL);
 		while (s[index] != '\0')
 		{
 			chaine[index] = f(index, (char)s[index]);

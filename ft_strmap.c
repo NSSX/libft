@@ -21,6 +21,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	if (s && f)
 	{
 		chaine = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+		if(chaine)
+		  {
 		while (s[index] != '\0')
 		{
 			chaine[index] = f((char)s[index]);
@@ -28,6 +30,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 		}
 		chaine[index] = '\0';
 		return (chaine);
+		}
 	}
 	return (NULL);
 }

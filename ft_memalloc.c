@@ -14,13 +14,14 @@
 
 void	*ft_memalloc(size_t size)
 {
-	unsigned char *zone;
+	void *zone;
 
-	zone = (unsigned char *)malloc(sizeof(size) * size);
+	zone = NULL;
+	zone = (void *)malloc(sizeof(size) * size);
 	if (zone)
 	{
 		ft_bzero(zone, 0);
-		return ((void *)zone);
+		return (zone);
 	}
 	else
 		return (NULL);
