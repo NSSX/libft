@@ -21,6 +21,6 @@ char	*ft_strnew(size_t size)
 	{
 		ft_bzero(chaine, 0);
 		return (chaine);
-	}	
+	}
 	return (NULL);
 }

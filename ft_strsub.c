@@ -6,7 +6,7 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 18:23:28 by avella            #+#    #+#             */
-/*   Updated: 2015/11/24 18:23:52 by avella           ###   ########.fr       */
+/*   Updated: 2015/11/30 15:14:12 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 		chaine[i] = '\0';
 		return (chaine);
 	}
-	else
-		return (NULL);
+	return (NULL);
 }

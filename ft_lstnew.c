@@ -6,7 +6,7 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 11:14:28 by avella            #+#    #+#             */
-/*   Updated: 2015/11/29 18:26:33 by avella           ###   ########.fr       */
+/*   Updated: 2015/11/30 15:16:51 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 		}
 		else
 		{
-		  list->content = malloc(content_size);
+			list->content = malloc(content_size);
 			list->content = ft_memcpy(list->content, content, content_size);
 			list->content_size = content_size;
 		}

@@ -6,7 +6,7 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 18:46:36 by avella            #+#    #+#             */
-/*   Updated: 2015/11/29 18:36:04 by avella           ###   ########.fr       */
+/*   Updated: 2015/11/30 15:13:40 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-
-void ft_info(char *chaine);
-int 					ft_iszed(char c);
+void				ft_info(char *chaine);
+int					ft_iszed(char c);
 void				ft_putchar(char c);
 void				ft_putstr(char const *str);
 void				*ft_memset(void *b, int c, size_t len);
