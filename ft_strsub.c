@@ -19,7 +19,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	chaine = ft_memalloc(len + 1);
-	if (chaine)
+	if (chaine && s)
 	{
 		while (i < len && s[start] != '\0')
 		{
