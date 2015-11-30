@@ -6,7 +6,7 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:15:01 by avella            #+#    #+#             */
-/*   Updated: 2015/11/29 18:25:39 by avella           ###   ########.fr       */
+/*   Updated: 2015/11/30 18:57:10 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ static char		**write_word(char **tab, char const *s, char c)
 				indext2++;
 				i++;
 			}
+			tab[indext][indext2] = '\0';
 			indext++;
 			indext2 = 0;
 		}
@@ -94,6 +95,8 @@ char			**ft_strsplit(char const *s, char c)
 	int		i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	nbword = count_word(s, c);
 	tab = (char **)malloc(sizeof(char *) * nbword + 1);
 	if (tab == NULL)
