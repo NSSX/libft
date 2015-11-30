@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_info.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 11:58:24 by avella            #+#    #+#             */
-/*   Updated: 2015/11/27 11:58:52 by avella           ###   ########.fr       */
+/*   Created: 2015/11/30 11:09:54 by avella            #+#    #+#             */
+/*   Updated: 2015/11/30 11:10:08 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+void	ft_info(char *chaine)
 {
-	t_list *new_lst;
-	t_list *after;
-	t_list *before;
+	int i;
+	int maj;
+	int min;
+	int carac;
 
-	new_lst = NULL;
-	if (lst && (*f))
+	i = 0;
+	maj = 0;
+	min = 0;
+	carac = 0;
+	if (chaine)
 	{
-		new_lst = (*f)(lst);
-		before = new_lst;
-		lst = lst->next;
-		while (lst)
+		while (chaine[i++] != '\0')
 		{
-			after = (*f)(lst);
-			before->next = after;
-			before = after;
-			lst = lst->next;
+			if (chaine[i] >= 97 && chaine[i] <= 122)
+				min++;
+			if (chaine[i] >= 65 && chaine[i] <= 90)
+				maj++;
 		}
-		before->next = NULL;
+		ft_putstr("Majuscule {");
+		ft_putnbr(maj);
+		ft_putstr("} Minuscule {");
+		ft_putnbr(min);
+		ft_putstr("} Nombre de carac :::: ");
+		ft_putnbr(ft_strlen(chaine));
 	}
-	return (new_lst);
 }

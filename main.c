@@ -3,6 +3,6 @@
 
 int main()
 {
-  printf("%s", ft_sentence(""));
+  printf("%d",ft_strequ("al\0alals","al\0alal"));
   return (0);
 }

@@ -23,7 +23,7 @@ typedef struct		s_list
 }					t_list;
 
 
-char 				*ft_sentence(char *chaine);
+void ft_info(char *chaine);
 int 					ft_iszed(char c);
 void				ft_putchar(char c);
 void				ft_putstr(char const *str);
