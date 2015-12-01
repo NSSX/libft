@@ -6,7 +6,7 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:15:01 by avella            #+#    #+#             */
-/*   Updated: 2015/11/30 18:57:10 by avella           ###   ########.fr       */
+/*   Updated: 2015/12/01 16:03:46 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,15 @@ static char		**malloc_word(char **tab, char const *s, char c, int i)
 				count++;
 			}
 			tab[indext] = (char *)malloc(sizeof(char) * count + 1);
+			if (!tab[indext])
+				return (NULL);
 			count = 0;
 			indext++;
 		}
 		else
 			i++;
 	}
+	tab[indext] = NULL;
 	return (tab);
 }
 
@@ -102,6 +105,8 @@ char			**ft_strsplit(char const *s, char c)
 	if (tab == NULL)
 		return (NULL);
 	malloc_word(tab, s, c, i);
+	if (tab == NULL)
+		return (NULL);
 	write_word(tab, s, c);
 	return (tab);
 }

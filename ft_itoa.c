@@ -38,9 +38,9 @@ static char		*mystr(char *chaine, int negativ, int count, int myn)
 static char		*myreturn(int n)
 {
 	if (n == 0)
-		return ("0");
+	  return (ft_strdup("0"));
 	if (n == -2147483648)
-		return ("-2147483648");
+	  return (ft_strdup("-2147483648"));
 	return (NULL);
 }
 
@@ -64,10 +64,10 @@ char			*ft_itoa(int n)
 		myn = n;
 	}
 	count = ft_count(n, count);
-	chaine = (char *)malloc(sizeof(char) * count + 1);
+	chaine = (char *)malloc(sizeof(char) * (count + 1));
 	if (chaine == NULL)
 		return (NULL);
-	chaine[count] = '\0';
 	mystr(chaine, negativ, count, myn);
+	chaine[count] = '\0';
 	return (chaine);
 }
