@@ -17,12 +17,10 @@ void	ft_info(char *chaine)
 	int i;
 	int maj;
 	int min;
-	int carac;
 
 	i = 0;
 	maj = 0;
 	min = 0;
-	carac = 0;
 	if (chaine)
 	{
 		while (chaine[i++] != '\0')
