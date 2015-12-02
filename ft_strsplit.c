@@ -6,7 +6,7 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:15:01 by avella            #+#    #+#             */
-/*   Updated: 2015/12/01 16:03:46 by avella           ###   ########.fr       */
+/*   Updated: 2015/12/02 20:05:23 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,7 @@ char			**ft_strsplit(char const *s, char c)
 	tab = (char **)malloc(sizeof(char *) * nbword + 1);
 	if (tab == NULL)
 		return (NULL);
-	malloc_word(tab, s, c, i);
-	if (tab == NULL)
+	if (!malloc_word(tab, s, c, i))
 		return (NULL);
 	write_word(tab, s, c);
 	return (tab);
