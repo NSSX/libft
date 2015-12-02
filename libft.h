@@ -23,8 +23,6 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-void				ft_info(char *chaine);
-int					ft_iszed(char c);
 void				ft_putchar(char c);
 void				ft_putstr(char const *str);
 void				*ft_memset(void *b, int c, size_t len);
