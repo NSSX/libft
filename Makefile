@@ -16,6 +16,8 @@ CC = gcc
 
 FLAGS = -Wall -Wextra -Werror
 
+INCLUDES = "includes"
+
 SRC=ft_putchar.c ft_putstr.c ft_tolower.c ft_toupper.c ft_strlen.c \
 	ft_memset.c ft_strcpy.c ft_isascii.c ft_isalpha.c ft_isdigit.c \
 	ft_isalnum.c ft_isprint.c ft_putchar_fd.c ft_putstr_fd.c \
@@ -37,8 +39,8 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
-$(OBJ): ./libft.h $(SRC)
-	$(CC) $(FLAGS) -I . -c $(SRC)
+$(OBJ): ./includes/libft.h $(SRC)
+	$(CC) $(FLAGS) -I $(INCLUDES) -c $(SRC)
 
 clean:
 	rm -f $(OBJ)
